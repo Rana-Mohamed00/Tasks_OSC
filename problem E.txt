@@ -1,0 +1,20 @@
+#include <algorithm>
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long A,B, sumOfEven=0 ,sumOfOdd=0,sumOfNumbers=0;
+    cin>>A>>B;
+    if( A>B){
+        swap(A,B);
+    }
+    for(long long i=A;i<=B;i++){
+        sumOfNumbers+=i;
+        if(i%2==0){
+            sumOfEven+=i;
+        }else{
+            sumOfOdd+=i;
+        }
+    }
+    cout<<sumOfNumbers<<"\n"<<sumOfEven<<"\n"<<sumOfOdd<<endl;
+}

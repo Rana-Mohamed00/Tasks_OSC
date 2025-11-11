@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+using namespace std;
+int main(){
+    string temp="a";
+    string new_word;
+    int index=1,k,num_iteration;
+    char nextchar;
+    cin>>k;
+    num_iteration=ceil(log(k)/log(2));
+   for(int i=0;i<num_iteration;i++){
+       new_word="";
+       for(int j=0;j<index;j++){
+           nextchar=temp[j]+1;
+           new_word +=nextchar;
+       }
+       index*=2;
+       temp+=new_word;
+   }
+   cout<<temp[--k];
+    
+}

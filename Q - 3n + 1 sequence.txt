@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+long long rec(long long n){
+    if(n==1){
+        return 1;
+    }
+    if (n%2==0){
+        n/=2;
+        return 1+rec(n);
+    }else{
+        n=3*n+1;
+        return 1+rec(n) ;
+    }
+}
+int main()
+{
+   long long num;
+   cin>>num;
+   cout<<rec(num);
+
+}

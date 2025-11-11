@@ -1,0 +1,36 @@
+string decode(string &s, int &i) {
+    string result = "";
+    int n = s.length();
+
+    while (i < n && s[i] != ']') {
+        if (isalpha(s[i])) {
+            result += s[i];
+            i++;
+        }
+        else if (isdigit(s[i])) {
+            int num = 0;
+            while (i < n && isdigit(s[i])) {
+                num = num * 10 + (s[i] - '0');
+                i++;
+            }
+
+            i++;
+
+            string inner = decode(s, i);
+            i++;
+
+            for (int k = 0; k < num; k++) {
+                result += inner;
+            }
+        }
+    }
+
+    return result;
+}
+int main() {
+    string s;
+    cin >> s;
+    int index = 0;
+    cout << decode(s, index);
+    return 0;
+}
